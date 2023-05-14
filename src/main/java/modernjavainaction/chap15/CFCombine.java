@@ -15,10 +15,10 @@ public class CFCombine {
       int x = 1337;
 
       CompletableFuture<Integer> a = new CompletableFuture<>();
-      CompletableFuture<Integer> b = new CompletableFuture<>();
-      CompletableFuture<Integer> c = a.thenCombine(b, (y, z)-> y + z);
+      CompletableFuture<Integer> other = new CompletableFuture<>();
+      CompletableFuture<Integer> c = a.thenCombine(other, (y, z)-> y + z);
       executorService.submit(() -> a.complete(f(x)));
-      executorService.submit(() -> b.complete(g(x)));
+      executorService.submit(() -> other.complete(g(x)));
 
       System.out.println(c.get());
       executorService.shutdown();

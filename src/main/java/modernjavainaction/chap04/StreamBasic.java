@@ -1,12 +1,14 @@
 package modernjavainaction.chap04;
 
 import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamBasic {
 
@@ -48,4 +50,6 @@ public class StreamBasic {
         .collect(toList());
   }
 
+  void practise(List<Dish> menu) {
+  }
 }
